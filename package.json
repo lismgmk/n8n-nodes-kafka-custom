@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-kafka-snappy",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "custom kafka node for n8n with snappy compression",
 	"keywords": [
 		"n8n-community-node-package"
@@ -25,10 +25,10 @@
 		"preinstall": "npx only-allow pnpm",
 		"build": "tsc && gulp build:icons",
 		"dev": "tsc --watch",
-		"format": "prettier nodes credentials --write",
-		"lint": "eslint nodes credentials package.json",
-		"lintfix": "eslint nodes credentials package.json --fix",
-		"prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+		"format": "prettier nodes --write",
+		"lint": "eslint nodes package.json",
+		"lintfix": "eslint nodes package.json --fix",
+		"prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes package.json"
 	},
 	"files": [
 		"dist"
@@ -36,7 +36,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/KafkaSnappy.credentials.js"
+			"n8n-nodes-base/dist/credentials/Kafka.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/KafkaSnappy/KafkaSnappy.node.js",
